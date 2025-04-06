@@ -11,8 +11,8 @@ namespace Labor_Tracker.Models
         public string TruckId { get; set; }
         public string Driver { get; set; }
         public string Load { get; set; }
-        public string StartTime { get; set; } // or DateTime if you prefer
-        public string EndTime { get; set; }   // or DateTime
+        public string StartDateTime { get; set; } 
+        public string EndDateTime { get; set; }   
         public string Duration { get; set; }
     }
 }

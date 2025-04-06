@@ -20,8 +20,9 @@ namespace Labor_Tracker.ViewModels
 
         public LoginViewModel()
         {
+            LoginCommand = new Command(OnLogin);
             _authService = new AuthenticationService();
-            LoginCommand = new Command(async () => await LoginAsync());
+            //LoginCommand = new Command(async () => await LoginAsync());
             NavigateToRegisterCommand = new Command(async () => await NavigateToRegisterAsync());
         }
 
@@ -44,9 +45,29 @@ namespace Labor_Tracker.ViewModels
         }
 
         public ICommand LoginCommand { get; }
+
+        private void OnLogin()
+        {
+
+            Console.WriteLine($"Attempting login with user={Username} pass={Password}");
+            // Basic example - in real usage, you'd check credentials or call an API
+            if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password))
+            {
+                // Navigate to HomePage
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    Application.Current.MainPage = new NavigationPage(new HomePage());
+                });
+            }
+            else
+            {
+                Message = "Invalid username or password.";
+            }
+        }
+
         public ICommand NavigateToRegisterCommand { get; }
 
-        private async Task LoginAsync()
+        /*private async Task LoginAsync()
         {
             if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
             {
@@ -65,7 +86,7 @@ namespace Labor_Tracker.ViewModels
                 // Navigate to the main page
                 await Application.Current.MainPage.Navigation.PushAsync(new MainPage());
             }
-        }
+        }*/
 
         private async Task NavigateToRegisterAsync()
         {
