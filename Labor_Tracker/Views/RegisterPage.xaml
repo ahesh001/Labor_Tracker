@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Labor_Tracker.Views.RegisterPage"
+             Title="Register">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <Entry Placeholder="Username" Text="{Binding Username}" />
+            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" />
+            <Entry Placeholder="Confirm Password" IsPassword="True" Text="{Binding ConfirmPassword}" />
+            <Button Text="Register" Command="{Binding RegisterCommand}" />
+            <Label Text="{Binding Message}" TextColor="Red" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
