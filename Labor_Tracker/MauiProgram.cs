@@ -1,6 +1,8 @@
 ﻿using Labor_Tracker.Services;
 using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
+using Firebase.Auth;
+using Firebase.Auth.Providers;
 
 namespace Labor_Tracker
 {
@@ -20,10 +22,22 @@ namespace Labor_Tracker
 
             builder.Services.AddMauiBlazorWebView();
 
-            //Register Services
+            // Register Services
             builder.Services.AddSingleton<DatabaseService>();
             builder.Services.AddSingleton<PasswordService>();
             builder.Services.AddSingleton<AuthenticationService>();
+
+            // Firebase Service
+            builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig()
+            {
+                ApiKey = "",
+                AuthDomain = "",
+                Providers = new Firebase.Auth.Providers.FirebaseAuthProvider[]
+                {
+                    new EmailProvider()
+                }
+
+            }));
 
             // Register platform-specific implementations
 #if ANDROID

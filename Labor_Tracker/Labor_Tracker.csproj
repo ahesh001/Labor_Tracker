@@ -62,7 +62,7 @@
 
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.1.2" />
-        <PackageReference Include="Google.Cloud.Firestore" Version="3.10.0" />
+        <PackageReference Include="FirebaseAuthentication.net" Version="4.1.0" />
         <PackageReference Include="Microsoft.DotNet.PlatformAbstractions" Version="3.1.6" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.92" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.92" />
@@ -95,6 +95,12 @@
 
     <ItemGroup>
       <Folder Include="Resources\Styles\" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+      <PackageReference Include="Xamarin.GooglePlayServices.Auth">
+        <Version>121.3.0.1</Version>
+      </PackageReference>
     </ItemGroup>
 
 </Project>
