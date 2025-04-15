@@ -22,13 +22,8 @@ namespace Labor_Tracker
 
             builder.Services.AddMauiBlazorWebView();
 
-            // Register Services
-            builder.Services.AddSingleton<DatabaseService>();
-            builder.Services.AddSingleton<PasswordService>();
-            builder.Services.AddSingleton<AuthenticationService>();
-
             // Firebase Service
-            builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig()
+            IServiceCollection serviceCollection = builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig()
             {
                 ApiKey = "",
                 AuthDomain = "",

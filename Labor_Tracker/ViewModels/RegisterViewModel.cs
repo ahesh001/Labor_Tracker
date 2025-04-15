@@ -11,24 +11,26 @@ namespace Labor_Tracker.ViewModels
 {
     public class RegisterViewModel : BindableObject
     {
-        private readonly AuthenticationService _authService;
+        private readonly FirebaseAuthService _authService;
 
-        private string _username;
+        private string _email;
         private string _password;
         private string _confirmPassword;
         private string _message;
 
         public RegisterViewModel()
         {
-            _authService = new AuthenticationService();
+            // Normally you'd store the API key in a config or secure place
+            _authService = new FirebaseAuthService(new HttpClient(), "YOUR_FIREBASE_API_KEY");
+
             RegisterCommand = new Command(async () => await RegisterAsync());
             NavigateToLoginCommand = new Command(async () => await NavigateToLoginAsync());
         }
 
-        public string Username
+        public string Email
         {
-            get => _username;
-            set { _username = value; OnPropertyChanged(); }
+            get => _email;
+            set { _email = value; OnPropertyChanged(); }
         }
 
         public string Password
@@ -54,27 +56,28 @@ namespace Labor_Tracker.ViewModels
 
         private async Task RegisterAsync()
         {
-            //Input validation
-            if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
+            if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
             {
-                Message = "Please enter a username and password.";
+                Message = "Please enter an email and password.";
                 return;
             }
-
             if (Password != ConfirmPassword)
             {
                 Message = "Passwords do not match.";
                 return;
             }
 
-            var (isSuccess, msg) = await _authService.RegisterAsync(Username, Password);
+            var (isSuccess, msg, idToken) = await _authService.RegisterAsync(Email, Password);
             Message = msg;
-            _message = isSuccess ? "Registration successful" : "User already exists";
 
-            if (isSuccess)
+            if (isSuccess && !string.IsNullOrEmpty(idToken))
             {
-                // Navigate back to the login page after successful registration
-                await Application.Current.MainPage.Navigation.PopAsync();
+                // Store token in SecureStorage if you like
+                await SecureStorage.Default.SetAsync("firebase_token", idToken);
+
+                // Navigate back to login
+                await Shell.Current.GoToAsync("//LoginPage");
+                // or however you're handling navigation
             }
         }
 

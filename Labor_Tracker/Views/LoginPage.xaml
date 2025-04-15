@@ -6,13 +6,29 @@
     Title="Login">
 
     <ScrollView>
-        <StackLayout Padding="20" Spacing="15">
-            <Entry Placeholder="Username" Text="{Binding Username}" TextColor="{StaticResource TextColor}" />
-            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" TextColor="{StaticResource TextColor}" />
-            <Button Text="Login" Command="{Binding LoginCommand}" Style="{StaticResource PrimaryButtonStyle}" />
-            <Label Text="{Binding Message}" TextColor="{StaticResource AccentColor}" />
-            <Button Text="Register" Command="{Binding NavigateToRegisterCommand}" Style="{StaticResource AccentButtonStyle}" />
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Email" />
+            <Entry Placeholder="Email" 
+                   Text="{Binding Email}" 
+                   TextColor="{StaticResource TextColor}" />
 
-        </StackLayout>
+            <Label Text="Password" />
+            <Entry Placeholder="Password" 
+                   IsPassword="True" 
+                   Text="{Binding Password}" 
+                   TextColor="{StaticResource TextColor}" />
+
+            <Button Text="Login" 
+                    Command="{Binding LoginCommand}" 
+                    Style="{StaticResource PrimaryButtonStyle}" />
+
+            <Button Text="Register" 
+                    Command="{Binding NavigateToRegisterCommand}" 
+                    Style="{StaticResource AccentButtonStyle}" />
+
+            <Label Text="{Binding Message}" 
+                   TextColor="{StaticResource AccentColor}" />
+
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

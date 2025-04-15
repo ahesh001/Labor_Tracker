@@ -13,17 +13,33 @@ namespace Labor_Tracker
 
             // Perform the login status check
             CheckUserLoginStatus();
-
-            //MainPage = new ContentPage();
         }
         //Option to have the CheckUserLoginStatus method first when app starts
-        /*protected override void OnStart()
+        protected override void OnStart()
         {
             base.OnStart();
-
-            // Perform the login status check
-            CheckUserLoginStatus();
-        }*/
+            // or in the App constructor
+            Task.Run(async () =>
+            {
+                var token = await SecureStorage.Default.GetAsync("firebase_token");
+                if (!string.IsNullOrEmpty(token))
+                {
+                    // Possibly navigate to HomePage directly
+                    MainThread.BeginInvokeOnMainThread(() =>
+                    {
+                        Shell.Current.GoToAsync("//HomePage");
+                    });
+                }
+                else
+                {
+                    // Show login
+                    MainThread.BeginInvokeOnMainThread(() =>
+                    {
+                        Shell.Current.GoToAsync("//LoginPage");
+                    });
+                }
+            });
+        }
 
         protected override void OnResume()
         {

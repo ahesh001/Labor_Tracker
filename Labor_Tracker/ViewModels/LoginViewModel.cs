@@ -12,24 +12,23 @@ namespace Labor_Tracker.ViewModels
 {
     public class LoginViewModel : BindableObject
     {
-        private readonly AuthenticationService _authService;
+        private readonly FirebaseAuthService _authService;
 
-        private string _username;
+        private string _email;
         private string _password;
         private string _message;
 
         public LoginViewModel()
         {
-            LoginCommand = new Command(OnLogin);
-            _authService = new AuthenticationService();
-            //LoginCommand = new Command(async () => await LoginAsync());
+            _authService = new FirebaseAuthService(new HttpClient(), "YOUR_FIREBASE_API_KEY");
+            LoginCommand = new Command(async () => await LoginAsync());
             NavigateToRegisterCommand = new Command(async () => await NavigateToRegisterAsync());
         }
 
-        public string Username
+        public string Email
         {
-            get => _username;
-            set { _username = value; OnPropertyChanged(); }
+            get => _email;
+            set { _email = value; OnPropertyChanged(); }
         }
 
         public string Password
@@ -45,48 +44,28 @@ namespace Labor_Tracker.ViewModels
         }
 
         public ICommand LoginCommand { get; }
-
-        private void OnLogin()
-        {
-
-            Console.WriteLine($"Attempting login with user={Username} pass={Password}");
-            // Basic example - in real usage, you'd check credentials or call an API
-            if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password))
-            {
-                // Navigate to HomePage
-                MainThread.BeginInvokeOnMainThread(() =>
-                {
-                    Application.Current.MainPage = new NavigationPage(new HomePage());
-                });
-            }
-            else
-            {
-                Message = "Invalid username or password.";
-            }
-        }
-
         public ICommand NavigateToRegisterCommand { get; }
 
-        /*private async Task LoginAsync()
+        private async Task LoginAsync()
         {
-            if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
+            if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
             {
-                Message = "Please enter your username and password.";
+                Message = "Enter email and password.";
                 return;
             }
-            
-            var (isSuccess, msg, user) = await _authService.LoginAsync(Username, Password);
+
+            (bool isSuccess, string msg, string idToken) = await _authService.LoginAsync(Email, Password);
             Message = msg;
 
-            if (isSuccess)
+            if (isSuccess && !string.IsNullOrEmpty(idToken))
             {
-                // Store user session data securely
-                await SecureStorage.Default.SetAsync("user_id", user.Id.ToString());
+                // Store the token in SecureStorage
+                await SecureStorage.Default.SetAsync("firebase_token", idToken);
 
-                // Navigate to the main page
-                await Application.Current.MainPage.Navigation.PushAsync(new MainPage());
+                // Navigate to your home page
+                Application.Current.MainPage = new NavigationPage(new HomePage());
             }
-        }*/
+        }
 
         private async Task NavigateToRegisterAsync()
         {

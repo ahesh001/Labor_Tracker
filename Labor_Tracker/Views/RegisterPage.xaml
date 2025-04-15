@@ -5,12 +5,26 @@
              Title="Register">
 
     <ScrollView>
-        <StackLayout Padding="20" Spacing="15">
-            <Entry Placeholder="Username" Text="{Binding Username}" />
-            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" />
-            <Entry Placeholder="Confirm Password" IsPassword="True" Text="{Binding ConfirmPassword}" />
-            <Button Text="Register" Command="{Binding RegisterCommand}" />
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Email" />
+            <Entry Placeholder="Email" 
+                   Text="{Binding Email}" />
+
+            <Label Text="Password" />
+            <Entry Text="{Binding Password}"
+                   IsPassword="True"  />
+
+            <Label Text="Confirm Password" />
+            <Entry Text="{Binding ConfirmPassword}"
+                   IsPassword="True"  />
+
+            <Button Text="Register" 
+                    Command="{Binding RegisterCommand}" />
+
+            <Button Text="Back to Login"
+                Command="{Binding NavigateToLoginCommand}" />
+            
             <Label Text="{Binding Message}" TextColor="Red" />
-        </StackLayout>
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
