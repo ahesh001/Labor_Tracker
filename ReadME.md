@@ -254,7 +254,7 @@ Project Link: [https://github.com/ahesh001/Labor_Tracker_Pro](https://github.com
 [forks-shield]: https://img.shields.io/github/forks/ahesh001/Labor_Tracker_Pro.svg?style=for-the-badge
 [forks-url]: https://github.com/ahesh001/Labor_Tracker_Pro/network/members
 [stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/ahesh001/Labor_Tracker_Pro/stargazers
+[stars-url]: https://github.com/ahesh001/Labor_Tracker/stargazers
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
 [issues-url]: https://github.com/ahesh001/Labor_Tracker_Pro/issues
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
