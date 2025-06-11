@@ -37,9 +37,9 @@
     <br />
     <a href="https://github.com/ahesh001/Labor_Tracker_Pro">View Demo</a>
     ·
-    <a href="https://github.com/ahesh001/Labor_Tracker_Pro/issues/new?assignees=octocat&labels=bug%2Ctriage&projects=octo-org%2F1%2Cocto-org%2F44&template=Test_Form.yml&title=%5BBug%5D%3A+">Report Bug</a>
+    <a href="https://github.com/ahesh001/Labor_Tracker/issues/new?assignees=ahesh001&labels=bug%2Ctriage&projects=labor-tracker&template=bug_report.yml&title=%5BBug%5D%3A+">Report Bug</a>
     ·
-    <a href=https://github.com/ahesh001/Labor_Tracker_Pro/issues/new?assignees=ahesh001&labels=enhancement&projects=&template=feature_request.yml&title=%5BEnhancements%5D>Feature Request</a>
+    <a href="https://github.com/ahesh001/Labor_Tracker/issues/new?assignees=ahesh001&labels=enhancement&projects=&template=feature_request.yml&title=%5BEnhancements%5D">Feature Request</a>
   </p>
 </div>
 
