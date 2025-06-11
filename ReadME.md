@@ -1,6 +1,6 @@
 ![Labor-Delivery-Pro](https://github.com/user-attachments/assets/a667bb73-4ff1-411f-a406-c58aff15001b)
 # Labor_Tracker
-<!-- Improved compatibility of back to top link: See: https://github.com/ahesh001/Labor_Tracker_Pro/blob/master/README.md -->
+<!-- Improved compatibility of back to top link: See: https://github.com/ahesh001/Labor_Tracker/blob/master/README.md -->
 <a id="readme-top"></a>
 
 
@@ -30,19 +30,16 @@
 <h3 align="center">Labor_Tracker</h3>
 
   <p align="center">
-    The Labor Tracker App is an innovative mobile application designed to streamline labor tracking and job management for businesses and contractors. This all-in-one system integrates job start times, travel tracking, and total shop hours while leveraging Firebase Cloud for real-time data synchronization and storage. The app also incorporates an API for GPS tracking to enhance location accuracy and efficiency.
+    A smart delivery tracking app built for logistics, contractors, and dispatchers. Labor_Tracker allows real-time logging of deliveries, travel time, and work hours-streamlining how jobs are confirmed, tracked, and verified.
     <br />
-    <a href="https://github.com/ahesh001/Labor_Tracker"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/ahesh001/Labor_Tracker">View Demo</a>
-    ·
-    <a href="https://github.com/ahesh001/Labor_Tracker/issues/new?assignees=ahesh001&labels=bug%2Ctriage&projects=labor-tracker&template=bug_report.yml&title=%5BBug%5D%3A+">Report Bug</a>
-    ·
-    <a href="https://github.com/ahesh001/Labor_Tracker/issues/new?assignees=ahesh001&labels=enhancement&projects=&template=feature_request.yml&title=%5BEnhancements%5D">Feature Request</a>
+    From start to drop-off, every delivery is logged, timed, and secured through role-based dashboards, GPS, and optional QR-enabled Smart Boxes.
+    </p>
+    <p>
+      <a href="https://github.com/ahesh001/Labor_Tracker">View Demo</a>
+      <a href="https://github.com/ahesh001/Labor_Tracker/issues/new?assignees=ahesh001&labels=bug%2Ctriage&projects=labor-tracker&template=bug_report.yml&title=%5BBug%5D%3A+">Report Bug</a>
+      <a href="https://github.com/ahesh001/Labor_Tracker/issues/new?assignees=ahesh001&labels=enhancement&projects=&template=feature_request.yml&title=%5BEnhancements%5D">Feature Request</a>
   </p>
 </div>
-
 
 
 <!-- TABLE OF CONTENTS -->
@@ -74,6 +71,15 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+**Labor_Tracker** is a mobile-first delivery tracking system that helps field workers, drivers, and dispatchers manage their entire delivery workflow-clock-in to delivery drop-off-in one seamless app.
+Whether you're managing a fleet or a single delivery, the app tracks:
+<li>Start and end times</li>
+<li>Travel time and routes via GPS</li>
+<li>Delivery completion (with optional QR scan)</li>
+<li>Real-time status across roles</li>
+</br>
+<p>With Firebase Cloud handling live data sync, and a GPS API providing location precision, Labor_Tracker ensures every job is documented, verified, and stored in the cloud. This will reduce administrative tasks while increasing accountability and transparency.</p> 
+<p>The app also supports Smart Boxes for secure, on-site drop-offs and auto-verification-plus role-based screens for Drivers, Dispatch Leads, Admins, and Customers.</p>
 
 **Key Features:**
 <ol>
@@ -154,7 +160,13 @@
 
 
 
-### Built With
+## Smart Features
+### Smart Boxes (In Development)
+Smart Boxes are secure, on-site delivery lockers integrated with the Labor_Tracker system. These boxes support:
+<li>QR-scanned delivery completion (automatically logs drop-off)</li>
+<li>Guest Delivery support without full app registration</li>
+<li>AI-dispatch timing</li>
+<li>Secure digital handoff records</li>
 
 
 
