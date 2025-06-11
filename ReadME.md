@@ -1,5 +1,5 @@
 ![Labor-Delivery-Pro](https://github.com/user-attachments/assets/a667bb73-4ff1-411f-a406-c58aff15001b)
-# Labor_Tracker_Pro
+# Labor_Tracker
 <!-- Improved compatibility of back to top link: See: https://github.com/ahesh001/Labor_Tracker_Pro/blob/master/README.md -->
 <a id="readme-top"></a>
 
@@ -24,18 +24,18 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/ahesh001/Labor_Tracker_Pro">
+  <a href="https://github.com/ahesh001/Labor_Tracker">
   </a>
 
-<h3 align="center">Labor_Tracker_Pro</h3>
+<h3 align="center">Labor_Tracker</h3>
 
   <p align="center">
     The Labor Tracker App is an innovative mobile application designed to streamline labor tracking and job management for businesses and contractors. This all-in-one system integrates job start times, travel tracking, and total shop hours while leveraging Firebase Cloud for real-time data synchronization and storage. The app also incorporates an API for GPS tracking to enhance location accuracy and efficiency.
     <br />
-    <a href="https://github.com/ahesh001/Labor_Tracker_Pro"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ahesh001/Labor_Tracker"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/ahesh001/Labor_Tracker_Pro">View Demo</a>
+    <a href="https://github.com/ahesh001/Labor_Tracker">View Demo</a>
     ·
     <a href="https://github.com/ahesh001/Labor_Tracker/issues/new?assignees=ahesh001&labels=bug%2Ctriage&projects=labor-tracker&template=bug_report.yml&title=%5BBug%5D%3A+">Report Bug</a>
     ·
